@@ -13,6 +13,7 @@
 		DADE5B021AACEC200039A3AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADE5B011AACEC200039A3AB /* Images.xcassets */; };
 		DADE5B051AACEC200039A3AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DADE5B031AACEC200039A3AB /* LaunchScreen.xib */; };
 		DADE5B111AACEC210039A3AB /* Quixotic_JRC_ChessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADE5B101AACEC210039A3AB /* Quixotic_JRC_ChessTests.swift */; };
+		DADE5B1B1AACEC720039A3AB /* ChessBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADE5B1A1AACEC720039A3AB /* ChessBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		DADE5B0A1AACEC210039A3AB /* Quixotic-JRC ChessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quixotic-JRC ChessTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADE5B0F1AACEC210039A3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DADE5B101AACEC210039A3AB /* Quixotic_JRC_ChessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quixotic_JRC_ChessTests.swift; sourceTree = "<group>"; };
+		DADE5B1A1AACEC720039A3AB /* ChessBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				DADE5AFA1AACEC200039A3AB /* AppDelegate.swift */,
 				DADE5AFC1AACEC200039A3AB /* ViewController.swift */,
+				DADE5B1A1AACEC720039A3AB /* ChessBoardView.swift */,
 				DADE5AFE1AACEC200039A3AB /* Main.storyboard */,
 				DADE5B011AACEC200039A3AB /* Images.xcassets */,
 				DADE5B031AACEC200039A3AB /* LaunchScreen.xib */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DADE5AFD1AACEC200039A3AB /* ViewController.swift in Sources */,
+				DADE5B1B1AACEC720039A3AB /* ChessBoardView.swift in Sources */,
 				DADE5AFB1AACEC200039A3AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
