@@ -16,7 +16,8 @@ class ChessBoardView: UIView {
     let pieceSize: Int = 38
     
     // Images
-    let board: UIImage = UIImage(named: "board")!
+    let board: UIImage = UIImage(named: "Board")!
+    let selectionHighlight: UIImage = UIImage(named: "SelectionHighlight")!
     
     // TODO: Replace text drawing with piece images
     let teamColors = [Team.white: UIColor.whiteColor(), Team.black: UIColor.blackColor()]
@@ -38,9 +39,23 @@ class ChessBoardView: UIView {
         let boardSize: CGRect = self.bounds
         board.drawInRect(boardSize)
         
+        if (board_state.SelectedPosition != nil) {
+            // Draw selection highlight
+            selectionHighlight.drawInRect(pieceRect(board_state.SelectedPosition))
+            
+            // Draw possible moves
+            // TODO: Build the list of valid moves intelligently instead of checking everything
+            for position in board_state.AllPositions {
+                if (board_state.moveIsValid(to: position)) {
+                    selectionHighlight.drawInRect(pieceRect(position))
+                }
+            }
+        }
+        
+        
         // Draw pieces
         for position in board_state.allPieces() {
-            let piece = board_state.piece(position)
+            let piece = board_state.getPiece(position)
             let pieceName: NSString = piece.type.description
             pieceName.drawInRect(pieceRect(position), withAttributes: textAttributes[piece.team])
         }
@@ -50,6 +65,21 @@ class ChessBoardView: UIView {
         let pieceSize: Int = 38
         return CGRect(x: (8 + (position.x * pieceSize)), y: (8 + (position.y * pieceSize)), width: pieceSize,height: pieceSize)
     }
+    
+    override func touchesEnded(touches: NSSet, withEvent event:UIEvent) {
+        let touch: UITouch = touches.anyObject() as UITouch
+        let touchLocation: CGPoint = touch.locationInView(self)
+        
+        let squareWidth =  (self.frame.width / 8)
+        let squareHeight = (self.frame.height / 8)
+        
+        let xCoord: Int = Int(touchLocation.x / squareWidth)
+        let yCoord: Int = Int(touchLocation.y / squareHeight)
+        
+        board_state.positionWasTouched(Position(y: yCoord, x: xCoord))
+        
+        self.setNeedsDisplay()
+    }
 }
 
 class BoardState {
@@ -58,6 +88,9 @@ class BoardState {
     let AllPositions: [Position]
     
     var board_state: [[Piece!]]
+    
+    var SelectedPosition: Position!
+    var CurrentTeam = Team.white
     
     // Set up board, and construct the "AllPositions" property
     init() {
@@ -92,12 +125,49 @@ class BoardState {
          println(board_state)
     }
     
-    func piece(position: Position) -> Piece! {
+    func getPiece(position: Position) -> Piece! {
         return board_state[position.y][position.x]
     }
     
     func allPieces() -> [Position] {
-        return AllPositions.filter({p in self.piece(p) != nil})
+        return AllPositions.filter({p in self.getPiece(p) != nil})
+    }
+    
+    func isFriendly(position: Position) -> Bool {
+        let piece = getPiece(position)
+        if piece != nil {
+            return piece.team == CurrentTeam
+        }
+        return false
+    }
+    
+    func isEnemy(position: Position) -> Bool {
+        let piece = getPiece(position)
+        if piece != nil {
+            return piece.team != CurrentTeam
+        }
+        return false
+    }
+    
+    func positionWasTouched(positionTouched: Position) {
+        let piece = getPiece(positionTouched)
+        
+        if isFriendly(positionTouched) {
+            SelectedPosition = positionTouched
+        } else if (SelectedPosition != nil) {
+            let moveSucceeded = tryToMovePiece(to: positionTouched)
+            if (!moveSucceeded) {
+                SelectedPosition = nil
+            }
+        }
+    }
+    
+    func tryToMovePiece(to newPosition: Position) -> Bool {
+        return false;
+    }
+    
+    func moveIsValid(to newPosition: Position) -> Bool {
+        return getPiece(newPosition) == nil;
     }
 }
 
