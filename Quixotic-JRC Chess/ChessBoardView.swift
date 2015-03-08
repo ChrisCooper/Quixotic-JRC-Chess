@@ -45,10 +45,8 @@ class ChessBoardView: UIView {
             
             // Draw possible moves
             // TODO: Build the list of valid moves intelligently instead of checking everything
-            for position in board_state.AllPositions {
-                if (board_state.moveIsValid(to: position)) {
-                    selectionHighlight.drawInRect(pieceRect(position))
-                }
+            for position in board_state.allValidMoves() {
+                selectionHighlight.drawInRect(pieceRect(position))
             }
         }
         
@@ -155,19 +153,43 @@ class BoardState {
         if isFriendly(positionTouched) {
             SelectedPosition = positionTouched
         } else if (SelectedPosition != nil) {
-            let moveSucceeded = tryToMovePiece(to: positionTouched)
-            if (!moveSucceeded) {
+            let validMoves = allValidMoves()
+            
+            if contains(validMoves, positionTouched) {
+                movePiece(from: SelectedPosition, to: positionTouched)
+                nextTurn()
+                checkWinConditions()
+            } else {
                 SelectedPosition = nil
             }
         }
     }
     
-    func tryToMovePiece(to newPosition: Position) -> Bool {
-        return false;
+    func movePiece(from oldPosition: Position, to newPosition: Position) {
+
     }
     
-    func moveIsValid(to newPosition: Position) -> Bool {
-        return getPiece(newPosition) == nil;
+    func allValidMoves() -> [Position] {
+        let selectedPiece = getPiece(SelectedPosition)
+        let movePrototypes = PieceType.MovePrototypes[selectedPiece.type]
+        
+        // Look for  en passant
+        // Look for check
+        // Look for Castling and no check
+
+        return [];
+    }
+    
+    func checkWinConditions() {
+        // TODO: look for checkmate
+    }
+    
+    func nextTurn() {
+        if CurrentTeam == Team.white {
+            CurrentTeam = Team.black
+        } else {
+            CurrentTeam = Team.white
+        }
     }
 }
 
@@ -212,7 +234,7 @@ enum PieceType: NSString {
         }
     }
     
-    static let BackRowMoves = [
+    static let MovePrototypes = [
         Pawn: PawnMoves,
         Rook: StraightUnlimited,
         Knight: [],
