@@ -141,6 +141,46 @@ enum PieceType: NSString {
             return self.rawValue
         }
     }
+    
+    static let BackRowMoves = [
+        Pawn: PawnMoves,
+        Rook: StraightUnlimited,
+        Knight: [],
+        Bishop: DiagonalUnlimited,
+        Queen: BothUnlimited,
+        King: BothShort
+    ]
+    
+    static let DiagonalDeltas = [(1,1), (1,-1), (-1,1), (-1,-1)]
+    static let StraightDeltas = [(1,0), (-1,0), (0,1), (0,-1)]
+    // TODO: when swift lets you add arrays, just use that here
+    static let BothDeltas = [(1,1), (1,-1), (-1,1), (-1,-1),(1,0), (-1,0), (0,1), (0,-1)]
+    
+    // Build move arrays
+    static let PawnMoves = [
+        Move(deltaY: 1, deltaX: 0, canCapture: false, scalable: false),
+        Move(deltaY: 1, deltaX: 1, canCapture: true, scalable: false),
+        Move(deltaY: 1, deltaX: -1, canCapture: true, scalable: false)
+    ]
+    static let StraightUnlimited = StraightDeltas.map({ (y, x) -> Move in
+        Move(deltaY: y, deltaX: x, canCapture: true, scalable: true)
+    })
+    static let DiagonalUnlimited = DiagonalDeltas.map({ (y, x) -> Move in
+        Move(deltaY: y, deltaX: x, canCapture: true, scalable: true)
+    })
+    static let BothUnlimited = BothDeltas.map({ (y, x) -> Move in
+        Move(deltaY: y, deltaX: x, canCapture: true, scalable: true)
+    })
+    static let BothShort = BothDeltas.map({ (y, x) -> Move in
+        Move(deltaY: y, deltaX: x, canCapture: true, scalable: false)
+    })
+}
+
+struct Move {
+    let deltaY: Int
+    let deltaX: Int
+    let canCapture: Bool
+    let scalable: Bool
 }
 
 struct Position: Printable, Equatable {
