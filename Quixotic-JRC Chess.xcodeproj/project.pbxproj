@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DADE5AFB1AACEC200039A3AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADE5AFA1AACEC200039A3AB /* AppDelegate.swift */; };
+		DADE5AFD1AACEC200039A3AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADE5AFC1AACEC200039A3AB /* ViewController.swift */; };
+		DADE5B001AACEC200039A3AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADE5AFE1AACEC200039A3AB /* Main.storyboard */; };
+		DADE5B021AACEC200039A3AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADE5B011AACEC200039A3AB /* Images.xcassets */; };
+		DADE5B051AACEC200039A3AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DADE5B031AACEC200039A3AB /* LaunchScreen.xib */; };
+		DADE5B111AACEC210039A3AB /* Quixotic_JRC_ChessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADE5B101AACEC210039A3AB /* Quixotic_JRC_ChessTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DADE5B0B1AACEC210039A3AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DADE5AED1AACEC200039A3AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DADE5AF41AACEC200039A3AB;
+			remoteInfo = "Quixotic-JRC Chess";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DADE5AF51AACEC200039A3AB /* Quixotic-JRC Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quixotic-JRC Chess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADE5AF91AACEC200039A3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADE5AFA1AACEC200039A3AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DADE5AFC1AACEC200039A3AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DADE5AFF1AACEC200039A3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DADE5B011AACEC200039A3AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DADE5B041AACEC200039A3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DADE5B0A1AACEC210039A3AB /* Quixotic-JRC ChessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quixotic-JRC ChessTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADE5B0F1AACEC210039A3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADE5B101AACEC210039A3AB /* Quixotic_JRC_ChessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quixotic_JRC_ChessTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DADE5AF21AACEC200039A3AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADE5B071AACEC210039A3AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DADE5AEC1AACEC200039A3AB = {
+			isa = PBXGroup;
+			children = (
+				DADE5AF71AACEC200039A3AB /* Quixotic-JRC Chess */,
+				DADE5B0D1AACEC210039A3AB /* Quixotic-JRC ChessTests */,
+				DADE5AF61AACEC200039A3AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DADE5AF61AACEC200039A3AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DADE5AF51AACEC200039A3AB /* Quixotic-JRC Chess.app */,
+				DADE5B0A1AACEC210039A3AB /* Quixotic-JRC ChessTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DADE5AF71AACEC200039A3AB /* Quixotic-JRC Chess */ = {
+			isa = PBXGroup;
+			children = (
+				DADE5AFA1AACEC200039A3AB /* AppDelegate.swift */,
+				DADE5AFC1AACEC200039A3AB /* ViewController.swift */,
+				DADE5AFE1AACEC200039A3AB /* Main.storyboard */,
+				DADE5B011AACEC200039A3AB /* Images.xcassets */,
+				DADE5B031AACEC200039A3AB /* LaunchScreen.xib */,
+				DADE5AF81AACEC200039A3AB /* Supporting Files */,
+			);
+			path = "Quixotic-JRC Chess";
+			sourceTree = "<group>";
+		};
+		DADE5AF81AACEC200039A3AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DADE5AF91AACEC200039A3AB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DADE5B0D1AACEC210039A3AB /* Quixotic-JRC ChessTests */ = {
+			isa = PBXGroup;
+			children = (
+				DADE5B101AACEC210039A3AB /* Quixotic_JRC_ChessTests.swift */,
+				DADE5B0E1AACEC210039A3AB /* Supporting Files */,
+			);
+			path = "Quixotic-JRC ChessTests";
+			sourceTree = "<group>";
+		};
+		DADE5B0E1AACEC210039A3AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DADE5B0F1AACEC210039A3AB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DADE5AF41AACEC200039A3AB /* Quixotic-JRC Chess */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADE5B141AACEC210039A3AB /* Build configuration list for PBXNativeTarget "Quixotic-JRC Chess" */;
+			buildPhases = (
+				DADE5AF11AACEC200039A3AB /* Sources */,
+				DADE5AF21AACEC200039A3AB /* Frameworks */,
+				DADE5AF31AACEC200039A3AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Quixotic-JRC Chess";
+			productName = "Quixotic-JRC Chess";
+			productReference = DADE5AF51AACEC200039A3AB /* Quixotic-JRC Chess.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DADE5B091AACEC210039A3AB /* Quixotic-JRC ChessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADE5B171AACEC210039A3AB /* Build configuration list for PBXNativeTarget "Quixotic-JRC ChessTests" */;
+			buildPhases = (
+				DADE5B061AACEC210039A3AB /* Sources */,
+				DADE5B071AACEC210039A3AB /* Frameworks */,
+				DADE5B081AACEC210039A3AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DADE5B0C1AACEC210039A3AB /* PBXTargetDependency */,
+			);
+			name = "Quixotic-JRC ChessTests";
+			productName = "Quixotic-JRC ChessTests";
+			productReference = DADE5B0A1AACEC210039A3AB /* Quixotic-JRC ChessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DADE5AED1AACEC200039A3AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Quixotic - JRC";
+				TargetAttributes = {
+					DADE5AF41AACEC200039A3AB = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DADE5B091AACEC210039A3AB = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = DADE5AF41AACEC200039A3AB;
+					};
+				};
+			};
+			buildConfigurationList = DADE5AF01AACEC200039A3AB /* Build configuration list for PBXProject "Quixotic-JRC Chess" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DADE5AEC1AACEC200039A3AB;
+			productRefGroup = DADE5AF61AACEC200039A3AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DADE5AF41AACEC200039A3AB /* Quixotic-JRC Chess */,
+				DADE5B091AACEC210039A3AB /* Quixotic-JRC ChessTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DADE5AF31AACEC200039A3AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADE5B001AACEC200039A3AB /* Main.storyboard in Resources */,
+				DADE5B051AACEC200039A3AB /* LaunchScreen.xib in Resources */,
+				DADE5B021AACEC200039A3AB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADE5B081AACEC210039A3AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DADE5AF11AACEC200039A3AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADE5AFD1AACEC200039A3AB /* ViewController.swift in Sources */,
+				DADE5AFB1AACEC200039A3AB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADE5B061AACEC210039A3AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADE5B111AACEC210039A3AB /* Quixotic_JRC_ChessTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DADE5B0C1AACEC210039A3AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DADE5AF41AACEC200039A3AB /* Quixotic-JRC Chess */;
+			targetProxy = DADE5B0B1AACEC210039A3AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DADE5AFE1AACEC200039A3AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DADE5AFF1AACEC200039A3AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DADE5B031AACEC200039A3AB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DADE5B041AACEC200039A3AB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DADE5B121AACEC210039A3AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DADE5B131AACEC210039A3AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DADE5B151AACEC210039A3AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Quixotic-JRC Chess/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DADE5B161AACEC210039A3AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Quixotic-JRC Chess/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DADE5B181AACEC210039A3AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Quixotic-JRC ChessTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quixotic-JRC Chess.app/Quixotic-JRC Chess";
+			};
+			name = Debug;
+		};
+		DADE5B191AACEC210039A3AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Quixotic-JRC ChessTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quixotic-JRC Chess.app/Quixotic-JRC Chess";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DADE5AF01AACEC200039A3AB /* Build configuration list for PBXProject "Quixotic-JRC Chess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADE5B121AACEC210039A3AB /* Debug */,
+				DADE5B131AACEC210039A3AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADE5B141AACEC210039A3AB /* Build configuration list for PBXNativeTarget "Quixotic-JRC Chess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADE5B151AACEC210039A3AB /* Debug */,
+				DADE5B161AACEC210039A3AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DADE5B171AACEC210039A3AB /* Build configuration list for PBXNativeTarget "Quixotic-JRC ChessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADE5B181AACEC210039A3AB /* Debug */,
+				DADE5B191AACEC210039A3AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DADE5AED1AACEC200039A3AB /* Project object */;
+}
