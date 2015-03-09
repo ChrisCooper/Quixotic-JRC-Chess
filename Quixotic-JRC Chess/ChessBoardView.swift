@@ -165,19 +165,47 @@ class BoardState {
         }
     }
     
-    func movePiece(from oldPosition: Position, to newPosition: Position) {
-
-    }
-    
     func allValidMoves() -> [Position] {
         let selectedPiece = getPiece(SelectedPosition)
-        let movePrototypes = PieceType.MovePrototypes[selectedPiece.type]
+        let movePrototypes = PieceType.MovePrototypes[selectedPiece.type]!
+        
+        var validMoves: [Position] = []
+        
+        for protoMove in movePrototypes {
+            
+            if !protoMove.scalable {
+                let position = newPosition(afterDelta: (y: protoMove.deltaY, x: protoMove.deltaX))
+                if moveIsValid(toPosition: position, viaPrototype: protoMove) {
+                    validMoves.append(position)
+                }
+            }
+        }
         
         // Look for  en passant
         // Look for check
         // Look for Castling and no check
 
         return [];
+    }
+    
+    func moveIsValid(toPosition position: Position, viaPrototype protoMove: ProtoMove) -> Bool {
+        if protoMove.canCapture {
+            return isInBounds(position)
+        } else {
+            return getPiece(position) == nil
+        }
+    }
+    
+    func isInBounds(position: Position) -> Bool {
+        return position.y >= 0 && position.y < 8 && position.x >= 0 && position.x < 7
+    }
+    
+    func newPosition(afterDelta delta: (y: Int, x: Int)) -> Position {
+        return Position(y: SelectedPosition.y + delta.y, x: SelectedPosition.x + delta.x)
+    }
+    
+    func movePiece(from oldPosition: Position, to newPosition: Position) {
+        
     }
     
     func checkWinConditions() {
@@ -234,10 +262,10 @@ enum PieceType: NSString {
         }
     }
     
-    static let MovePrototypes = [
+    static let MovePrototypes : [PieceType: [ProtoMove]] = [
         Pawn: PawnMoves,
         Rook: StraightUnlimited,
-        Knight: [],
+        Knight: KnightMoves,
         Bishop: DiagonalUnlimited,
         Queen: BothUnlimited,
         King: BothShort
@@ -247,28 +275,32 @@ enum PieceType: NSString {
     static let StraightDeltas = [(1,0), (-1,0), (0,1), (0,-1)]
     // TODO: when swift lets you add arrays, just use that here
     static let BothDeltas = [(1,1), (1,-1), (-1,1), (-1,-1),(1,0), (-1,0), (0,1), (0,-1)]
+    static let KnightDeltas = [(2,1), (2,-1), (-2,1), (-2,-1)]
     
     // Build move arrays
     static let PawnMoves = [
-        Move(deltaY: 1, deltaX: 0, canCapture: false, scalable: false),
-        Move(deltaY: 1, deltaX: 1, canCapture: true, scalable: false),
-        Move(deltaY: 1, deltaX: -1, canCapture: true, scalable: false)
+        ProtoMove(deltaY: 1, deltaX: 0, canCapture: false, scalable: false),
+        ProtoMove(deltaY: 1, deltaX: 1, canCapture: true, scalable: false),
+        ProtoMove(deltaY: 1, deltaX: -1, canCapture: true, scalable: false)
     ]
-    static let StraightUnlimited = StraightDeltas.map({ (y, x) -> Move in
-        Move(deltaY: y, deltaX: x, canCapture: true, scalable: true)
+    static let KnightMoves = KnightDeltas.map({ (y, x) -> ProtoMove in
+        ProtoMove(deltaY: y, deltaX: x, canCapture: true, scalable: false)
     })
-    static let DiagonalUnlimited = DiagonalDeltas.map({ (y, x) -> Move in
-        Move(deltaY: y, deltaX: x, canCapture: true, scalable: true)
+    static let StraightUnlimited = StraightDeltas.map({ (y, x) -> ProtoMove in
+        ProtoMove(deltaY: y, deltaX: x, canCapture: true, scalable: true)
     })
-    static let BothUnlimited = BothDeltas.map({ (y, x) -> Move in
-        Move(deltaY: y, deltaX: x, canCapture: true, scalable: true)
+    static let DiagonalUnlimited = DiagonalDeltas.map({ (y, x) -> ProtoMove in
+        ProtoMove(deltaY: y, deltaX: x, canCapture: true, scalable: true)
     })
-    static let BothShort = BothDeltas.map({ (y, x) -> Move in
-        Move(deltaY: y, deltaX: x, canCapture: true, scalable: false)
+    static let BothUnlimited = BothDeltas.map({ (y, x) -> ProtoMove in
+        ProtoMove(deltaY: y, deltaX: x, canCapture: true, scalable: true)
+    })
+    static let BothShort = BothDeltas.map({ (y, x) -> ProtoMove in
+        ProtoMove(deltaY: y, deltaX: x, canCapture: true, scalable: false)
     })
 }
 
-struct Move {
+struct ProtoMove {
     let deltaY: Int
     let deltaX: Int
     let canCapture: Bool
