@@ -171,7 +171,13 @@ class BoardState {
         
         var validMoves: [Position] = []
         
-        for protoMove in movePrototypes {
+        for _p in movePrototypes {
+            let protoMove = ProtoMove(
+                deltaY: CurrentTeam == Team.white ? (_p.deltaY * (-1)) : _p.deltaY,
+                deltaX: _p.deltaX,
+                canCapture: _p.canCapture,
+                scalable: _p.scalable
+            )
             
             if !protoMove.scalable {
                 let position = newPosition(afterDelta: (y: protoMove.deltaY, x: protoMove.deltaX))
@@ -185,7 +191,7 @@ class BoardState {
         // Look for check
         // Look for Castling and no check
 
-        return [];
+        return validMoves;
     }
     
     func moveIsValid(toPosition position: Position, viaPrototype protoMove: ProtoMove) -> Bool {
@@ -205,7 +211,9 @@ class BoardState {
     }
     
     func movePiece(from oldPosition: Position, to newPosition: Position) {
-        
+        let piece = getPiece(oldPosition)
+        board_state[newPosition.y][newPosition.x] = piece
+        board_state[oldPosition.y][oldPosition.x] = nil
     }
     
     func checkWinConditions() {
